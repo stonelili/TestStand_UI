@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{E61DDBC2-AC00-489B-AC4B-778A72908CF3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FTP2017</RootNamespace>
+    <AssemblyName>FTP2017</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>FTP2017.Program</StartupObject>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSkin">
+      <HintPath>D:\FTP2017_V2.1.6\CSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="MessageStruct">
+      <HintPath>D:\FTP2017_V2.1.6\MessageStruct.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NationalInstruments.TestStand.Interop.API" />
+    <Reference Include="NationalInstruments.TestStand.Interop.UI" />
+    <Reference Include="NationalInstruments.TestStand.Interop.UI.AxControls" />
+    <Reference Include="NationalInstruments.TestStand.Interop.UI.Support" />
+    <Reference Include="NationalInstruments.TestStand.Utility">
+      <HintPath>D:\FTP2017_V2.1.6\NationalInstruments.TestStand.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>D:\FTP2017_V2.1.6\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CleanupUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientSession.cs" />
+    <Compile Include="CustomProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DoubleBufferDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DoubleBufferListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DUT_SocketUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IniFile.cs" />
+    <Compile Include="InstrumentConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NextActionAfterEndExecution.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SequenceSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SequenceSetting.cs" />
+    <Compile Include="SocketConnection.cs" />
+    <Compile Include="SplashScreen.cs" />
+    <Compile Include="StartStopButtonClick.cs" />
+    <Compile Include="StartupUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CustomProgressBar.resx">
+      <DependentUpon>CustomProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoubleBufferDataGridView.resx">
+      <DependentUpon>DoubleBufferDataGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoubleBufferListView.resx">
+      <DependentUpon>DoubleBufferListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DUT_SocketUI.resx" />
+    <EmbeddedResource Include="FormMain.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="Loading" />
+    <None Include="Pic_Start" />
+    <None Include="Pic_Stop" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
